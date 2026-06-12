@@ -1,0 +1,27 @@
+.mcb-mermaid-editor-block {
+	padding: 1rem;
+	border: 1px solid #dcdcde;
+	border-radius: 0.375rem;
+}
+
+.mcb-mermaid-source-control textarea {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.mcb-mermaid-preview-heading {
+	margin-top: 1.25rem;
+}
+
+.mcb-mermaid-editor-preview {
+	min-height: 8rem;
+	padding: 1rem;
+	border: 1px dashed #949494;
+	border-radius: 0.375rem;
+	overflow-x: auto;
+	text-align: center;
+}
+
+.mcb-mermaid-editor-preview svg {
+	max-width: 100%;
+	height: auto;
+}

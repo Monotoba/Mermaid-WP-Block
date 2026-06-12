@@ -1,0 +1,70 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          coverage: none
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Validate PHP syntax
+        run: |
+          find . -name '*.php' -type f -exec php -l {} \;
+
+      - name: Validate JavaScript syntax
+        run: |
+          find assets blocks -name '*.js' -type f -exec node --check {} \;
+
+      - name: Build plugin zip
+        run: |
+          mkdir -p build
+          cd ..
+          zip -r Wordpress/build/mermaid-content-blocks.zip \
+            Wordpress/mermaid-content-blocks \
+            -x "*/\.git/*" \
+            "*/\.github/*" \
+            "*/.gitignore" \
+            "*/tests/*" \
+            "*/examples.md" \
+            "*/README.md" \
+            "*/readme.txt"
+          cd Wordpress
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            See [CHANGELOG.md](CHANGELOG.md) for details about this release.
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/mermaid-content-blocks.zip
+          asset_name: mermaid-content-blocks.zip
+          asset_content_type: application/zip

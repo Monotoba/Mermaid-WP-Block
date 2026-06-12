@@ -1,0 +1,41 @@
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.phpstorm.meta.php
+.php_cs.cache
+
+# Dependencies
+node_modules/
+composer.lock
+vendor/
+
+# Build & Distribution
+build/
+dist/
+*.zip
+*.tar.gz
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.temp
+.cache/
+
+# WordPress
+wp-config.php
+wp-content/
+wp-includes/
+index.php

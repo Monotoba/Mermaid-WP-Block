@@ -1,0 +1,40 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  lint:
+    name: Lint & Validate
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['7.4', '8.0', '8.1', '8.2', '8.3']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: none
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Validate PHP syntax
+        run: |
+          find . -name '*.php' -type f -exec php -l {} \;
+
+      - name: Validate JavaScript syntax
+        run: |
+          find assets blocks -name '*.js' -type f -exec node --check {} \;
+
+      - name: Run smoke tests
+        run: bash tools/smoke-test.sh

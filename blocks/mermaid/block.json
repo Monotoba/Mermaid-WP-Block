@@ -1,0 +1,39 @@
+{
+  "apiVersion": 3,
+  "name": "mcb/mermaid",
+  "title": "Mermaid Diagram",
+  "category": "media",
+  "icon": "chart-area",
+  "description": "Create a Mermaid diagram from text syntax and render it on the front end.",
+  "keywords": ["mermaid", "diagram", "flowchart", "sequence", "gantt"],
+  "textdomain": "mermaid-content-blocks",
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "source": {
+      "type": "string",
+      "default": "flowchart TD\n    A[Start] --> B{Decision}\n    B -->|Yes| C[Action]\n    B -->|No| D[Done]"
+    },
+    "theme": {
+      "type": "string",
+      "default": "default"
+    },
+    "caption": {
+      "type": "string",
+      "default": ""
+    },
+    "showSource": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "editorScript": "mcb-mermaid-editor",
+  "editorStyle": "mcb-mermaid-editor-style",
+  "style": "mcb-mermaid-style"
+}
