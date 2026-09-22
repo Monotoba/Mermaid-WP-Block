@@ -38,3 +38,8 @@ jobs:
 
       - name: Run smoke tests
         run: bash tools/smoke-test.sh
+
+      - name: Validate installable package
+        run: |
+          bash tools/build-plugin-zip.sh
+          bash tests/test-plugin-zip.sh
