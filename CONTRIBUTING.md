@@ -8,8 +8,8 @@ Please be respectful and constructive in all interactions. We're building this t
 
 ## Ways to Contribute
 
-- **Report bugs** – Open an [issue](https://github.com/Monotoba/mermaid-content-blocks/issues)
-- **Suggest features** – Start a [discussion](https://github.com/Monotoba/mermaid-content-blocks/discussions)
+- **Report bugs** – Open an [issue](https://github.com/Monotoba/Mermaid-WP-Block/issues)
+- **Suggest features** – Start an [issue](https://github.com/Monotoba/Mermaid-WP-Block/issues)
 - **Submit code** – Fork, create a branch, and open a pull request
 - **Improve documentation** – Fix typos, clarify instructions, add examples
 - **Share feedback** – Let us know what works and what doesn't
@@ -138,8 +138,15 @@ If you discover a security vulnerability, please email the maintainer privately 
 
 By contributing, you agree that your code will be licensed under the [MIT License](LICENSE). Ensure you only submit code you have rights to contribute.
 
+## Releases
+
+The `Release Package` workflow validates and stores an installable plugin ZIP.
+For a public release, run `bash tools/build-plugin-zip.sh` and
+`bash tests/test-plugin-zip.sh`, then create a GitHub release for the matching
+`v<plugin version>` tag and attach `build/mermaid-content-blocks.zip`.
+
 ## Questions?
 
-Open a [discussion](https://github.com/Monotoba/mermaid-content-blocks/discussions) or [issue](https://github.com/Monotoba/mermaid-content-blocks/issues) on GitHub.
+Open an [issue](https://github.com/Monotoba/Mermaid-WP-Block/issues) on GitHub.
 
 Thank you for contributing! 🎉
