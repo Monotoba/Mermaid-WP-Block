@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![WordPress Plugin: Compatible with 7.0+](https://img.shields.io/badge/WordPress-7.0%2B-blue.svg)](https://wordpress.org)
 [![PHP: 7.4+](https://img.shields.io/badge/PHP-7.4%2B-blue.svg)](https://www.php.net)
-[![GitHub Release](https://img.shields.io/github/v/release/Monotoba/mermaid-content-blocks?include_prereleases)](https://github.com/Monotoba/mermaid-content-blocks/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/Monotoba/Mermaid-WP-Block)](https://github.com/Monotoba/Mermaid-WP-Block/releases)
 
 A WordPress plugin that adds a dynamic Gutenberg block for rendering Mermaid diagrams in posts and pages.
 
@@ -20,14 +20,22 @@ A WordPress plugin that adds a dynamic Gutenberg block for rendering Mermaid dia
 
 ## Installation
 
-### Via WordPress Plugin Directory (When Available)
+### From GitHub (recommended)
+
+1. Download `mermaid-content-blocks.zip` from the [latest release](https://github.com/Monotoba/Mermaid-WP-Block/releases/latest).
+2. In WordPress, go to **Plugins → Add New Plugin → Upload Plugin** and select the ZIP.
+3. Click **Install Now**, then **Activate Plugin**.
+
+The release ZIP contains the `mermaid-content-blocks/` plugin folder. GitHub's automatic **Source code** ZIP is a repository archive, not the tested plugin package.
+
+### Via WordPress Plugin Directory (if listed there)
 1. Go to **Plugins > Add New** in your WordPress admin
 2. Search for "Mermaid Content Blocks"
 3. Click **Install Now** and then **Activate**
 
 ### Manual Installation
-1. Download the plugin from the [releases page](https://github.com/Monotoba/mermaid-content-blocks/releases)
-2. Upload the `mermaid-content-blocks` folder to `/wp-content/plugins/`
+1. Download and extract `mermaid-content-blocks.zip` from the [releases page](https://github.com/Monotoba/Mermaid-WP-Block/releases).
+2. Copy the extracted `mermaid-content-blocks` folder to `/wp-content/plugins/`.
 3. Go to **Plugins** in WordPress admin and activate "Mermaid Content Blocks"
 4. You're ready to use the block!
 
