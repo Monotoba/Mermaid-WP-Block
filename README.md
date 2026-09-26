@@ -1,5 +1,6 @@
 # Mermaid Content Blocks
 
+[![Tests](https://github.com/Monotoba/Mermaid-WP-Block/actions/workflows/test.yml/badge.svg)](https://github.com/Monotoba/Mermaid-WP-Block/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![WordPress Plugin: Compatible with 7.0+](https://img.shields.io/badge/WordPress-7.0%2B-blue.svg)](https://wordpress.org)
 [![PHP: 7.4+](https://img.shields.io/badge/PHP-7.4%2B-blue.svg)](https://www.php.net)
@@ -170,8 +171,8 @@ This project is licensed under the [MIT License](LICENSE) – see the LICENSE fi
 ## Support
 
 For issues, feature requests, or questions:
-- Open an [issue on GitHub](https://github.com/Monotoba/mermaid-content-blocks/issues)
-- Check [existing discussions](https://github.com/Monotoba/mermaid-content-blocks/discussions)
+- Open an [issue on GitHub](https://github.com/Monotoba/Mermaid-WP-Block/issues)
+- Check [existing discussions](https://github.com/Monotoba/Mermaid-WP-Block/discussions)
 
 ## Credits
 

@@ -28,8 +28,8 @@ Please be respectful and constructive in all interactions. We're building this t
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/mermaid-content-blocks.git
-   cd mermaid-content-blocks
+   git clone https://github.com/YOUR_USERNAME/Mermaid-WP-Block.git
+   cd Mermaid-WP-Block
    ```
 3. **Create a feature branch**:
    ```bash

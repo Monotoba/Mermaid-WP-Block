@@ -37,7 +37,9 @@ jobs:
           find assets blocks -name '*.js' -type f -exec node --check {} \;
 
       - name: Run smoke tests
-        run: bash tools/smoke-test.sh
+        run: |
+          bash tools/smoke-test.sh
+          bash tests/test-doc-links.sh
 
       - name: Validate installable package
         run: |
