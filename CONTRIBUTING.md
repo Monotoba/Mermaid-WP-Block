@@ -38,15 +38,21 @@ Please be respectful and constructive in all interactions. We're building this t
 
 ### Running Tests
 
-Before submitting a pull request, validate your changes:
+Before submitting a pull request, run the automated checks:
 
 ```bash
 bash tools/smoke-test.sh
+bash tests/test-doc-links.sh
 ```
 
-This checks:
-- PHP syntax validity
-- JavaScript syntax validity
+The smoke test checks PHP and JavaScript syntax. The documentation test catches stale repository links. PHP checks are skipped locally when PHP is unavailable; CI runs them across every supported PHP version.
+
+For changes that affect the packaged plugin, also build and validate the installable ZIP:
+
+```bash
+bash tools/build-plugin-zip.sh
+bash tests/test-plugin-zip.sh
+```
 
 ### Code Style
 
@@ -59,7 +65,7 @@ This checks:
 
 ### PHP Files
 
-- Use proper escaping for output (esc_html, esc_attr, etc.)
+- Use proper escaping for output (`esc_html`, `esc_attr`, etc.)
 - Use WordPress sanitization functions for input
 - Follow the existing code style and structure
 - Add comments for complex logic
@@ -81,11 +87,11 @@ This checks:
 
 ### Before Creating a Pull Request
 
-1. **Run tests** – `bash tools/smoke-test.sh`
+1. **Run tests** – Run both automated checks listed above
 2. **Test manually** – Follow [manual-test-plan.md](tests/manual-test-plan.md)
 3. **Verify functionality** – Ensure your changes work as intended
-4. **Update documentation** – Add/modify docs if behavior changed
-5. **Update CHANGELOG.md** – Note your changes under an "Unreleased" section
+4. **Update documentation** – Add or modify docs if behavior changed
+5. **Update CHANGELOG.md** – Note user-visible changes under an "Unreleased" section
 
 ### Creating a Pull Request
 
@@ -94,32 +100,34 @@ This checks:
    git push origin feature/your-feature-name
    ```
 2. **Open a PR on GitHub** with:
-   - Clear title describing the change
-   - Description of what changed and why
-   - Reference to any related issues (#123)
-   - Checklist of testing performed
+   - A clear title describing the change
+   - A description of what changed and why
+   - A reference to any related issues (#123)
+   - A checklist of testing performed
 3. **Respond to feedback** – We may request changes before merging
 
 ### PR Checklist
 
 - [ ] Code follows project style guidelines
-- [ ] Tests pass (`bash tools/smoke-test.sh`)
-- [ ] Manual testing completed (see test plan)
+- [ ] Automated checks pass
+- [ ] Manual testing is completed where relevant
 - [ ] Documentation is updated
-- [ ] CHANGELOG.md is updated
-- [ ] No unnecessary commits or debug code
+- [ ] CHANGELOG.md is updated for user-visible changes
+- [ ] No unnecessary commits or debug code remain
 - [ ] Commit messages are clear and descriptive
 
 ## Reporting Issues
 
 When reporting a bug, include:
 
-- **WordPress & PHP versions** – Check admin > Site Health
+- **WordPress and PHP versions** – Check Tools > Site Health in WordPress
 - **Steps to reproduce** – Be specific and detailed
 - **Expected behavior** – What should happen
 - **Actual behavior** – What happens instead
 - **Screenshots** – If relevant
-- **Error messages** – From browser console or server logs
+- **Error messages** – From the browser console or server logs
+
+Do not include passwords, private site data, or vulnerability details in a public issue.
 
 ## Suggesting Features
 
@@ -132,7 +140,7 @@ When suggesting a feature:
 
 ## Security
 
-If you discover a security vulnerability, please email the maintainer privately rather than opening a public issue. See the repository security policy for details.
+Please follow the private reporting instructions in [SECURITY.md](SECURITY.md). Do not disclose vulnerability details in a public issue.
 
 ## Licensing
 
