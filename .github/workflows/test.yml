@@ -39,6 +39,7 @@ jobs:
       - name: Run smoke tests
         run: |
           bash tools/smoke-test.sh
+          bash tests/test-compatibility.sh
           bash tests/test-doc-links.sh
 
       - name: Validate installable package

@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/Monotoba/Mermaid-WP-Block/actions/workflows/test.yml/badge.svg)](https://github.com/Monotoba/Mermaid-WP-Block/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![WordPress Plugin: Compatible with 7.0+](https://img.shields.io/badge/WordPress-7.0%2B-blue.svg)](https://wordpress.org)
+[![WordPress Plugin: Compatible with 6.3+](https://img.shields.io/badge/WordPress-6.3%2B-blue.svg)](https://wordpress.org)
 [![PHP: 7.4+](https://img.shields.io/badge/PHP-7.4%2B-blue.svg)](https://www.php.net)
 [![GitHub Release](https://img.shields.io/github/v/release/Monotoba/Mermaid-WP-Block)](https://github.com/Monotoba/Mermaid-WP-Block/releases)
 
@@ -135,12 +135,16 @@ From the plugin directory, run:
 
 ```bash
 bash tools/smoke-test.sh
+bash tests/test-compatibility.sh
+bash tests/test-doc-links.sh
 ```
 
 This script:
 - Validates PHP syntax using `php -l`
 - Validates JavaScript syntax using `node --check`
-- Requires `php` and `node` to be installed
+- Checks that compatibility declarations remain aligned
+- Checks documentation links for stale repository paths
+- Requires `php` and `node` for the syntax checks
 
 ### Manual Testing
 
@@ -153,7 +157,7 @@ See [tests/manual-test-plan.md](tests/manual-test-plan.md) for comprehensive tes
 
 ## Requirements
 
-- **WordPress:** 7.0 or later
+- **WordPress:** 6.3 or later
 - **PHP:** 7.4 or later
 - **Browser:** Modern browser with ES6+ support
 

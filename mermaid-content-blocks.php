@@ -3,7 +3,7 @@
  * Plugin Name: Mermaid Content Blocks
  * Description: Adds a Mermaid Diagram block for rendering text-based Mermaid diagrams in WordPress posts and pages.
  * Version: 1.0.1
- * Requires at least: 7.0
+ * Requires at least: 6.3
  * Requires PHP: 7.4
  * Author: Monotoba
  * License: MIT

@@ -18,7 +18,7 @@ Please be respectful and constructive in all interactions. We're building this t
 
 ### Prerequisites
 
-- WordPress 7.0 or later (local installation for testing)
+- WordPress 6.3 or later (local installation for testing)
 - PHP 7.4 or later
 - Node.js 14+ (optional, for JavaScript validation)
 - Git
@@ -42,10 +42,11 @@ Before submitting a pull request, run the automated checks:
 
 ```bash
 bash tools/smoke-test.sh
+bash tests/test-compatibility.sh
 bash tests/test-doc-links.sh
 ```
 
-The smoke test checks PHP and JavaScript syntax. The documentation test catches stale repository links. PHP checks are skipped locally when PHP is unavailable; CI runs them across every supported PHP version.
+The smoke test checks PHP and JavaScript syntax. The compatibility test keeps the declared WordPress requirements aligned, and the documentation test catches stale repository links. PHP checks are skipped locally when PHP is unavailable; CI runs them across every supported PHP version.
 
 For changes that affect the packaged plugin, also build and validate the installable ZIP:
 
