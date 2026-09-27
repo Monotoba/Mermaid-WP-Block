@@ -75,7 +75,7 @@
 		var showSource = block.getAttribute('data-mcb-show-source') === 'true';
 		var renderId = 'mcb-mermaid-svg-' + Date.now() + '-' + String(++renderCounter);
 
-		if (block.getAttribute('data-mcb-rendered') === 'true') {
+		if (['true', 'pending'].indexOf(block.getAttribute('data-mcb-rendered')) !== -1) {
 			return Promise.resolve();
 		}
 
@@ -119,7 +119,13 @@
 
 	function renderAll(root) {
 		var scope = root || document;
-		var blocks = Array.prototype.slice.call(scope.querySelectorAll('.mcb-mermaid-block'));
+		var blocks = [];
+
+		if (scope.nodeType === 1 && typeof scope.matches === 'function' && scope.matches('.mcb-mermaid-block')) {
+			blocks.push(scope);
+		}
+
+		blocks = blocks.concat(Array.prototype.slice.call(scope.querySelectorAll('.mcb-mermaid-block')));
 		var chain = Promise.resolve();
 
 		blocks.forEach(function (block) {

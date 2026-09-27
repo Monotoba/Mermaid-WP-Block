@@ -68,6 +68,7 @@
 		useEffect(
 			function () {
 				var output = outputRef.current;
+				var cancelled = false;
 				var renderId = 'mcb-editor-preview-' + Date.now() + '-' + Math.round(Math.random() * 1000000);
 
 				if (!output) {
@@ -96,15 +97,19 @@
 				window.mermaid
 					.render(renderId, source)
 					.then(function (result) {
-						if (outputRef.current === output) {
+						if (!cancelled && outputRef.current === output) {
 							output.innerHTML = result.svg;
 						}
 					})
 					.catch(function (renderError) {
-						if (outputRef.current === output) {
+						if (!cancelled && outputRef.current === output) {
 							output.textContent = __('Mermaid render error: ', 'mermaid-content-blocks') + renderError.message;
 						}
 					});
+
+				return function () {
+					cancelled = true;
+				};
 			},
 			[source, theme]
 		);

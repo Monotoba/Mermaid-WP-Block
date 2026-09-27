@@ -43,11 +43,12 @@ Before submitting a pull request, run the automated checks:
 ```bash
 bash tools/smoke-test.sh
 php tests/test-plugin.php
+node tests/test-javascript.js
 bash tests/test-compatibility.sh
 bash tests/test-doc-links.sh
 ```
 
-The smoke test checks PHP and JavaScript syntax. The PHP test exercises plugin behavior without requiring a WordPress installation. The compatibility test keeps the declared WordPress requirements aligned, and the documentation test catches stale repository links. PHP checks are skipped locally when PHP is unavailable; CI runs them across every supported PHP version.
+The smoke test checks PHP and JavaScript syntax. The PHP and JavaScript tests exercise plugin behavior without requiring a WordPress installation or browser. The compatibility test keeps the declared WordPress requirements aligned, and the documentation test catches stale repository links. PHP checks are skipped locally when PHP is unavailable; CI runs them across every supported PHP version.
 
 For changes that affect the packaged plugin, also build and validate the installable ZIP:
 

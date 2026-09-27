@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Document WordPress 6.3 as the verified minimum version.
 - Add automated checks that keep compatibility metadata aligned.
 - Add PHP behavioral tests for registration, security configuration, normalization, escaping, and rendering.
+- Add JavaScript behavioral tests for frontend rendering and editor preview lifecycles.
+
+### Fixed
+- Render a dynamically inserted block when the inserted DOM node is the block itself.
+- Prevent stale asynchronous editor previews from replacing newer results.
 
 ## [1.0.1] - 2026-09-22
 

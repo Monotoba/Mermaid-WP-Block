@@ -40,6 +40,7 @@ jobs:
         run: |
           bash tools/smoke-test.sh
           php tests/test-plugin.php
+          node tests/test-javascript.js
           bash tests/test-compatibility.sh
           bash tests/test-doc-links.sh
 
