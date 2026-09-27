@@ -39,6 +39,7 @@ jobs:
       - name: Run smoke tests
         run: |
           bash tools/smoke-test.sh
+          php tests/test-plugin.php
           bash tests/test-compatibility.sh
           bash tests/test-doc-links.sh
 

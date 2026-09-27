@@ -135,6 +135,7 @@ From the plugin directory, run:
 
 ```bash
 bash tools/smoke-test.sh
+php tests/test-plugin.php
 bash tests/test-compatibility.sh
 bash tests/test-doc-links.sh
 ```
@@ -142,6 +143,7 @@ bash tests/test-doc-links.sh
 This script:
 - Validates PHP syntax using `php -l`
 - Validates JavaScript syntax using `node --check`
+- Exercises PHP configuration, registration, normalization, escaping, and rendering behavior
 - Checks that compatibility declarations remain aligned
 - Checks documentation links for stale repository paths
 - Requires `php` and `node` for the syntax checks
