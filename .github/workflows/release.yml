@@ -36,6 +36,15 @@ jobs:
         run: |
           find assets blocks -name '*.js' -type f -exec node --check {} \;
 
+      - name: Run automated tests
+        run: |
+          bash tools/smoke-test.sh
+          php tests/test-plugin.php
+          node tests/test-javascript.js
+          bash tests/test-compatibility.sh
+          bash tests/test-version-metadata.sh
+          bash tests/test-doc-links.sh
+
       - name: Build plugin zip
         run: bash tools/build-plugin-zip.sh
 

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-09-26
+
 ### Changed
 - Document WordPress 6.3 as the verified minimum version.
 - Add automated checks that keep compatibility metadata aligned.

@@ -42,6 +42,7 @@ jobs:
           php tests/test-plugin.php
           node tests/test-javascript.js
           bash tests/test-compatibility.sh
+          bash tests/test-version-metadata.sh
           bash tests/test-doc-links.sh
 
       - name: Validate installable package

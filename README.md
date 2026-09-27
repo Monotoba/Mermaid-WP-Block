@@ -190,10 +190,4 @@ For issues, feature requests, or questions:
 
 ## Changelog
 
-### 1.0.0 (Initial Release)
-- Mermaid Diagram block for WordPress block editor
-- Support for all Mermaid diagram types
-- Multiple theme options
-- Optional caption and source display
-- Strict security configuration
-- Comprehensive documentation and tests
+See [CHANGELOG.md](CHANGELOG.md) for the complete release history.
